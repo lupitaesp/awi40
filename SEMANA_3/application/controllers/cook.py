@@ -8,9 +8,8 @@ from datetime import date
 class Cooki:
     def GET(self, name):
       try:
-        cookie = web.cookies()
+        cooki = web.cookies()
         now = datetime.now()
-        vista = 0
         formato = now.strftime('Año: %Y, Mes: %h, Dia: %d, Hora: %H, Minutos: %M, Segundos: %S')
 
         if not name:
@@ -18,12 +17,12 @@ class Cooki:
           web.setcookie("name",name)
         
 
-        if cookie.get('visitas'):
-          visitas = int(cookie.get('visitas'))
+        if cooki.get('visitas'):
+          visitas = int(cooki.get('visitas'))
           visitas +=1
-          web.setcookie("visitas", str(visitas))
+          web.setcookie('visitas', str(visitas))
          
-        return "COOKIES: " + "        " + "Visitas: " + str(visitas) + " " + "Nombre " + name + "Ultima entrada: "+str(formato)
+        return "COOKIES: " + "    " + "Visitas: " + str(visitas) + ","+ " " + "Nombre: " + name +"," + " " + "Ultima visita: "+str(formato) + "."
         
       except Exception as e:
         return "Error" + str(e.args)
