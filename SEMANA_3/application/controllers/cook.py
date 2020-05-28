@@ -3,8 +3,6 @@ from datetime import datetime
 from datetime import date
 
 
-
-
 class Cooki:
     def GET(self, name):
       try:
