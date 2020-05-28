@@ -1,7 +1,7 @@
 import web
 
 urls = (
-    '/(.*)', 'application.controllers.cook.'
+    '/(.*)', 'application.controllers.cook.Cooki'
 )
 app = web.application(urls, globals())
 
